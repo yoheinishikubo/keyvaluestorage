@@ -9,12 +9,6 @@ export declare namespace AsyncStorageTypes {
 }
 
 export abstract class IAsyncStorage<K = string, V = any> {
-  public abstract store: Map<K, V | null>;
-
-  public abstract size(): number;
-
-  public abstract getStore(): Map<K, V | null>;
-
   public abstract getItem(
     k: K,
     cb?: AsyncStorageTypes.ErrBack<V>
@@ -62,6 +56,4 @@ export abstract class IAsyncStorage<K = string, V = any> {
     entries: AsyncStorageTypes.Entries<string, string>,
     cb?: AsyncStorageTypes.ArrErrBack<string>
   ): Promise<void>;
-
-  public abstract flushGetRequests();
 }
